@@ -9,9 +9,18 @@
 #  ActiveRecord::Base.connection.execute("DELETE FROM #{table};")
 #end
 
-5.times do
+
+#3.times do
+#  User.create({
+#                  username: Faker::Internet.user_name,
+#                  email: Faker::Internet.email
+#              })
+#end
+
+1.times do
   Article.create({
                      title: Faker::Book.title,
                      description: Faker::Lorem.sentence,
+                     user: User.first
                  })
 end
