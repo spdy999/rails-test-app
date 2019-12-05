@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+  def index # http://localhost:3000/articles
+    articles = Article.order('created_at DESC')
+    render json: {status: 'SUCCESS', message: 'Loaded articles', data:articles}, status: :ok
+  end
   def new
     @article = Article.new
   end
