@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#ActiveRecord::Base.connection.tables.each do |table|
+#  ActiveRecord::Base.connection.execute("DELETE FROM #{table};")
+#end
+
+5.times do
+  Article.create({
+                     title: Faker::Book.title,
+                     description: Faker::Lorem.sentence,
+                 })
+end
